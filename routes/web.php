@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController; 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     // return view('welcome');
@@ -29,6 +30,9 @@ Route::get('/profile', [UserController::class, 'show']);
 Route:: get ('/hello/{name?}', function ($name = null) {
     return  $name ? 'Hello, ' . htmlspecialchars($name) . '!': 'Nothing provided to greet.';
 });
+
+Route::resource('posts', PostController::class);
+
 
 
 
