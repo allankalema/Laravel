@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController; 
 
 Route::get('/', function () {
     // return view('welcome');
@@ -19,7 +20,7 @@ Route::get('/', function () {
 // });
 
 // // writing a route while separating the logic
-// Route::get('/profile', [UserController::class, 'show']);
+Route::get('/profile', [UserController::class, 'show']);
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
